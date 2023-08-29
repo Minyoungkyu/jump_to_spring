@@ -1,7 +1,6 @@
 package com.sbs.sbb;
 
 import jakarta.persistence.*;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,7 +24,7 @@ public class Question {
 
     private LocalDateTime createDate;
 
-    @OneToMany( mappedBy = "question", cascade = CascadeType.REMOVE) // Question(질문) 을 삭제하면 밑에 answerList도 같이 삭제된다.
+    @OneToMany( mappedBy = "question", cascade = CascadeType.REMOVE) // Question(질문) 을 삭제하면 밑에 answerList도 같이 삭제된다.(cascade = CascadeType.Remove 때문에)
     private List<Answer> answerList;
 
 
